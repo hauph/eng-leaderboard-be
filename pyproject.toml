@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "english-leaderboard"
+version = "0.1.0"
+description = ""
+authors = ["haupham <hauph@hotmail.com>"]
+readme = "README.md"
+packages = [{include = "english_leaderboard"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.103.1"
+psycopg2 = "^2.9.7"
+alembic = "^1.12.0"
+sqlalchemy-utils = "0.40.0"
+sqlalchemy = "2.0.8"
+python-dotenv = "^1.0.0"
+uvicorn = "^0.23.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
