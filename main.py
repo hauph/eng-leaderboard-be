@@ -3,17 +3,18 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from db.database import SessionLocal
 from utils.error import print_error
+from utils.env_loader import FRONTEND_URL
 from apis.player import leaderboard_app
 
 app = FastAPI()
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [FRONTEND_URL]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=ALLOWED_HOSTS,
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
 
