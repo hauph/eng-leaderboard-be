@@ -8,7 +8,6 @@ from utils.env_loader import (
     POSTGRES_PASSWORD,
     POSTGRES_DB,
     POSTGRES_HOST,
-    POSTGRES_PORT,
 )
 
 if (
@@ -16,11 +15,10 @@ if (
     or POSTGRES_PASSWORD is None
     or POSTGRES_DB is None
     or POSTGRES_HOST is None
-    or POSTGRES_PORT is None
 ):
     raise BaseException("Missing POSTGRES database information")
 
-SQLALCHEMY_DATABASE_URL = f"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DB}"
+SQLALCHEMY_DATABASE_URL = f"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}/{POSTGRES_DB}"
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 if not database_exists(engine.url):

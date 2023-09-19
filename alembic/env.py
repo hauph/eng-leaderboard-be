@@ -10,7 +10,6 @@ from utils.env_loader import (
     POSTGRES_PASSWORD,
     POSTGRES_DB,
     POSTGRES_HOST,
-    POSTGRES_PORT,
 )
 
 from db.database import Base
@@ -25,7 +24,6 @@ config.set_section_option(section, "POSTGRES_USER", POSTGRES_USER)
 config.set_section_option(section, "POSTGRES_PASSWORD", POSTGRES_PASSWORD)
 config.set_section_option(section, "POSTGRES_DB", POSTGRES_DB)
 config.set_section_option(section, "POSTGRES_HOST", POSTGRES_HOST)
-config.set_section_option(section, "POSTGRES_PORT", POSTGRES_PORT)
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
